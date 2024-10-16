@@ -1,0 +1,19 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src"]
+
+ :dependencies
+ [[reagent "1.2.0"]]
+
+ :dev-http {8080 "public"}
+ 
+ :builds
+ {:app
+  {:target :browser
+   :output-dir "public/js"
+   :asset-path "/js" 
+   :module-hash-names true
+   :modules {:main {:init-fn zino-quiz.main/init}}
+   :optimizations :advanced
+   :source-map true
+   }}}
